@@ -80,13 +80,13 @@
             top: 18px;
             right: 20px;
             z-index: 10;
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(0, 0, 0, 0.3);
             backdrop-filter: blur(8px);
             border-radius: 40px;
             padding: 5px 10px;
             display: flex;
             gap: 8px;
-            border: 1px solid rgba(255,255,255,0.3);
+            border: 1px solid rgba(255,215,0,0.4);
         }
         .lang-btn {
             background: none;
@@ -100,20 +100,21 @@
             transition: 0.2s;
         }
         .lang-btn.active {
-            background: white;
-            color: #0B2B40;
+            background: linear-gradient(135deg, #D4AF37, #F5D742);
+            color: #1e2f3a;
+            box-shadow: 0 2px 6px rgba(212,175,55,0.3);
         }
         .lang-btn:not(.active):hover {
-            background: rgba(255,255,255,0.3);
+            background: rgba(255,215,0,0.3);
         }
 
-        /* header gradient + avatar */
+        /* header gradient + avatar (straight bottom) */
         .card-header {
             background: linear-gradient(135deg, #0B2B40 0%, #176F7A 100%);
             padding: 2rem 2rem 1.8rem;
             text-align: center;
             position: relative;
-            clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);
+            border-bottom: 2px solid #D4AF37;
         }
 
         .avatar-wrapper {
@@ -121,6 +122,9 @@
             width: 120px;
             height: 120px;
             margin: 0 auto 1rem;
+            border-radius: 50%;
+            background: #D4AF37;  /* gold background for border */
+            padding: 2px;        /* thickness of gold border */
         }
 
         .avatar {
@@ -128,7 +132,7 @@
             height: 100%;
             border-radius: 50%;
             object-fit: cover;
-            border: 3px solid rgba(255, 255, 255, 0.8);
+            border: 2px solid white;
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
             background: #f0f4f8;
         }
@@ -143,12 +147,13 @@
             border-radius: 50%;
             border: 2px solid white;
             animation: pulse 1.8s infinite;
+            box-shadow: 0 0 0 2px #D4AF37;
         }
 
         @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.7); }
-            70% { box-shadow: 0 0 0 8px rgba(46, 204, 113, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(46, 204, 113, 0); }
+            0% { box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.7), 0 0 0 2px #D4AF37; }
+            70% { box-shadow: 0 0 0 8px rgba(46, 204, 113, 0), 0 0 0 2px #D4AF37; }
+            100% { box-shadow: 0 0 0 0 rgba(46, 204, 113, 0), 0 0 0 2px #D4AF37; }
         }
 
         .name {
@@ -157,39 +162,50 @@
             letter-spacing: -0.3px;
             color: white;
             margin-bottom: 0.25rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
         }
 
         .title {
             font-size: 1rem;
             font-weight: 500;
-            background: rgba(255, 255, 255, 0.2);
+            background: linear-gradient(135deg, #D4AF37, #F5D742);
             display: inline-block;
             padding: 0.3rem 1rem;
             border-radius: 40px;
             backdrop-filter: blur(4px);
             margin-top: 0.6rem;
-            color: white;
+            color: #1e2f3a;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+        .department {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.9);
+            margin-top: 0.4rem;
+            font-weight: 500;
         }
 
         .vsip-logo {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(255,255,255,0.15);
+            background: rgba(0,0,0,0.3);
             padding: 6px 14px;
             border-radius: 40px;
             margin-top: 14px;
+            border: 1px solid rgba(212,175,55,0.5);
         }
         .vsip-logo img {
             height: 28px;
             width: auto;
             max-width: 80px;
             object-fit: contain;
+            filter: drop-shadow(0 1px 2px rgba(0,0,0,0.2));
         }
         .vsip-logo span {
             font-size: 0.8rem;
             font-weight: 500;
-            color: white;
+            color: #F5D742;
         }
 
         /* content area */
@@ -226,7 +242,7 @@
             width: 28px;
             font-size: 1.3rem;
             text-align: center;
-            color: #176F7A;
+            color: #D4AF37;
         }
 
         .btn span {
@@ -237,8 +253,8 @@
         .btn:hover {
             transform: translateX(5px);
             background: white;
-            border-color: #176F7A;
-            box-shadow: 0 8px 18px rgba(23, 111, 122, 0.15);
+            border-color: #D4AF37;
+            box-shadow: 0 8px 18px rgba(212,175,55,0.2);
         }
 
         .btn-primary {
@@ -250,7 +266,7 @@
         }
 
         .btn-primary i {
-            color: white;
+            color: #F5D742;
         }
 
         .btn-primary:hover {
@@ -273,7 +289,7 @@
         .info-row i {
             width: 28px;
             font-size: 1.2rem;
-            color: #176F7A;
+            color: #D4AF37;
             margin-top: 2px;
         }
 
@@ -285,6 +301,17 @@
 
         .info-row a:hover {
             text-decoration: underline;
+            color: #D4AF37;
+        }
+
+        .address-sub {
+            font-size: 0.85rem;
+            color: #5a7a8a;
+            margin-top: 4px;
+            margin-left: 28px;
+            padding-left: 0;
+            border-left: 2px solid #D4AF37;
+            padding-left: 10px;
         }
 
         /* social icons */
@@ -312,9 +339,9 @@
 
         .social-icon:hover {
             transform: translateY(-5px);
-            background: #176F7A;
-            color: white;
-            border-color: #176F7A;
+            background: linear-gradient(135deg, #D4AF37, #F5D742);
+            color: #1e2f3a;
+            border-color: #D4AF37;
         }
 
         /* vCard button */
@@ -338,11 +365,13 @@
 
         .vcard-btn i {
             font-size: 1.1rem;
+            color: #D4AF37;
         }
 
         .vcard-btn:hover {
             background: #eef7fa;
-            border-color: #176F7A;
+            border-color: #D4AF37;
+            box-shadow: 0 4px 12px rgba(212,175,55,0.2);
         }
 
         .footer-note {
@@ -386,6 +415,7 @@
             .card-content { padding: 1.5rem; }
             .btn { padding: 0.75rem 1rem; }
             .lang-switch { top: 12px; right: 12px; }
+            .address-sub { margin-left: 0; }
         }
     </style>
 </head>
@@ -400,33 +430,33 @@
 
     <div class="card-header">
         <div class="avatar-wrapper">
-            <img class="avatar" id="avatarImg" src="https://gionggiacam.com/uploads/product/size610/product1/1/product_14.jpg" alt="Avatar Vương Đằng Kiện">
+            <img class="avatar" id="avatarImg" src="Kiện_Avatar.jpg" alt="Avatar Vương Đằng Kiện">
             <div class="status-dot"></div>
         </div>
-        <div class="name" data-key="name">Vương Đằng Kiện</div>
-        <div class="title" data-key="title">Marcom</div>
+        <div class="name" data-key="name">Vương Đằng Kiện </div>
+        <div class="title" data-key="title">Marcom Officer</div>
+        <div class="department" data-key="dept">CRD Department</div>
         <div class="vsip-logo">
-            <!-- THAY LOGO VSIP TẠI ĐÂY: upload file logo của bạn và sửa đường dẫn bên dưới -->
-            <img src="vsip-logo.png" alt="VSIP Logo" id="vsipLogo">
+            <img src="vsip-logo.png" alt="VSIP Logo" id="vsipLogo" onerror="this.src='https://via.placeholder.com/80x40?text=VSIP'">
             <span>VSIP Group</span>
         </div>
     </div>
 
     <div class="card-content">
         <div class="action-grid">
-            <a href="tel:+84915844989" class="btn ripple">
+            <a href="tel:+84908009228" class="btn ripple">
                 <i class="fas fa-phone-alt"></i>
-                <span data-key="call">Gọi điện thoại</span>
+                <span data-key="call">(+84) 908 009 228</span>
                 <i class="fas fa-chevron-right" style="font-size: 0.8rem; opacity: 0.6;"></i>
             </a>
-            <a href="https://zalo.me/0915844989" class="btn ripple" target="_blank">
+            <a href="https://zalo.me/0908009228" class="btn ripple" target="_blank">
                 <i class="fab fa-whatsapp"></i>
                 <span data-key="zalo">Nhắn Zalo</span>
                 <i class="fas fa-chevron-right" style="font-size: 0.8rem; opacity: 0.6;"></i>
             </a>
-            <a href="mailto:nickvuong2003@gmail.com" class="btn ripple">
+            <a href="mailto:thuy.tl@vsip.com.vn" class="btn ripple">
                 <i class="fas fa-envelope"></i>
-                <span data-key="email">Gửi email</span>
+                <span data-key="email">thuy.tl@vsip.com.vn</span>
                 <i class="fas fa-chevron-right" style="font-size: 0.8rem; opacity: 0.6;"></i>
             </a>
             <a href="https://www.vsip.com.vn/" class="btn btn-primary ripple" target="_blank">
@@ -435,10 +465,19 @@
             </a>
         </div>
 
-        <!-- Thông tin chi tiết -->
+        <!-- Thông tin địa chỉ -->
         <div class="info-row">
-            <i class="fas fa-map-marker-alt"></i>
-            <span data-key="address">Tầng 12, tòa nhà SaiGon Marina IFC (SMIFC), số 02, đường Tôn Đức Thắng, Phường Sài Gòn, Thành phố Hồ Chí Minh, Việt Nam.</span>
+            <i class="fas fa-building"></i>
+            <div>
+                <div data-key="office_address">Tầng 12, Tòa nhà Saigon Marina IFC<br>Số 2 đường Tôn Đức Thắng, Phường Sài Gòn<br>Thành phố Hồ Chí Minh, Việt Nam</div>
+            </div>
+        </div>
+        <div class="info-row">
+            <i class="fas fa-envelope-open-text"></i>
+            <div>
+                <div data-key="mail_address_label" style="font-weight: 600; margin-bottom: 4px;">Thư từ & Giao dịch:</div>
+                <div data-key="mail_address">08 Hữu Nghị, phường Bình Hoà,<br>thành phố Hồ Chí Minh, Việt Nam</div>
+            </div>
         </div>
         <div class="info-row">
             <i class="fas fa-clock"></i>
@@ -489,13 +528,16 @@
     // === Dữ liệu đa ngôn ngữ ===
     const translations = {
         vi: {
-            name: "Vương Đằng Kiện",
-            title: "Marcom",
-            call: "Gọi điện thoại",
+            name: "Vương Đằng Kiện ",
+            title: "Marcom Officer",
+            dept: "CRD Department ",
+            call: "(+84) 915844989",
             zalo: "Nhắn Zalo",
-            email: "Gửi email",
+            email: "nickvuong2003@gmail.com",
             website: "Khám phá VSIP",
-            address: "Tầng 12, tòa nhà SaiGon Marina IFC (SMIFC), số 02, đường Tôn Đức Thắng, Phường Sài Gòn, Thành phố Hồ Chí Minh, Việt Nam.",
+            office_address: "Tầng 12, Tòa nhà Saigon Marina IFC<br>Số 2 đường Tôn Đức Thắng, Phường Sài Gòn<br>Thành phố Hồ Chí Minh, Việt Nam",
+            mail_address_label: "Thư từ & Giao dịch:",
+            mail_address: "08 Hữu Nghị, phường Bình Hoà,<br>thành phố Hồ Chí Minh, Việt Nam",
             working_hours: "Thứ 2 – Thứ 6 | 8:30 – 17:30",
             website_link: "vsip.com.vn",
             save_contact: "Lưu vào danh bạ (vCard)",
@@ -503,12 +545,15 @@
         },
         en: {
             name: "Vuong Dang Kien",
-            title: "Marcom",
-            call: "Call me",
+            title: "Marcom Oficcer",
+            dept: "CRD Department",
+            call: "(+84) 915844989",
             zalo: "Chat on Zalo",
-            email: "Send email",
+            email: "nickvuong2003@gmail.com",
             website: "Explore VSIP",
-            address: "12th Floor, SaiGon Marina IFC (SMIFC), 02 Ton Duc Thang Street, Sai Gon Ward, Ho Chi Minh City, Vietnam.",
+            office_address: "12th floor, Saigon Marina IFC Building<br>2 Ton Duc Thang, Sai Gon Ward,<br>Ho Chi Minh City, Vietnam",
+            mail_address_label: "Postal:",
+            mail_address: "08 Huu Nghi, Binh Hoa ward,<br>Ho Chi Minh city, Vietnam",
             working_hours: "Monday – Friday | 8:30 AM – 5:30 PM",
             website_link: "vsip.com.vn",
             save_contact: "Save to contacts (vCard)",
@@ -525,7 +570,7 @@
                 if (el.tagName === 'A' && key === 'website_link') {
                     el.innerText = translations[lang][key];
                 } else if (el.tagName === 'SPAN' || el.tagName === 'DIV') {
-                    el.innerText = translations[lang][key];
+                    el.innerHTML = translations[lang][key];
                 } else if (el.tagName === 'BUTTON' && key === 'save_contact') {
                     const span = el.querySelector('span');
                     if (span) span.innerText = translations[lang][key];
@@ -552,17 +597,18 @@
         });
     });
 
-    // === Tạo và tải vCard ===
+    // === Tạo và tải vCard với đầy đủ địa chỉ ===
     function generateVCard() {
         return `BEGIN:VCARD
 VERSION:3.0
-FN:Vương Đằng Kiện
-ORG:Mr. Kiện VSIP
-TITLE:Marcom
+FN:Vương Đằng Kiện 
+ORG:Mr. Vương Đằng Kiện 
+TITLE:Marcom Officer 
 TEL;TYPE=CELL,WORK:+84915844989
 EMAIL;TYPE=WORK:nickvuong2003@gmail.com
 URL:https://www.vsip.com.vn/
-ADR;TYPE=WORK:;;Tầng 12, tòa nhà SaiGon Marina IFC, 02 Tôn Đức Thắng, P. Sài Gòn;TP. Hồ Chí Minh;;700000;Vietnam
+ADR;TYPE=WORK:;;Tầng 12, Tòa nhà Saigon Marina IFC, 02 Tôn Đức Thắng, P. Sài Gòn;TP. Hồ Chí Minh;;700000;Vietnam
+ADR;TYPE=POSTAL:;;08 Hữu Nghị, phường Bình Hoà;TP. Hồ Chí Minh;;700000;Vietnam
 NOTE:NFC Business Card - VSIP
 END:VCARD`;
     }
@@ -574,13 +620,12 @@ END:VCARD`;
             const url = URL.createObjectURL(vcardBlob);
             const link = document.createElement('a');
             link.href = url;
-            link.download = 'vuong_dang_kien.vcf';
+            link.download = 'vuong_dang_Kien.vcf';
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
             URL.revokeObjectURL(url);
             
-            // Hiệu ứng thông báo
             const originalHTML = saveBtn.innerHTML;
             saveBtn.innerHTML = '<i class="fas fa-check-circle"></i> <span>Đã tạo vCard! / vCard created!</span>';
             setTimeout(() => {
